@@ -79,6 +79,40 @@ namespace TRPZ_Laba1
             return array;
         }
 
+        //Anton - Sorting by choice 
+
+
+        static public int[] SrtByChoice(int[] items)
+        {
+            int sortedRangeEnd = 0;
+
+            while (sortedRangeEnd < items.Length)
+            {
+                int nextIndex = FindIndexOfSmallestFromIndex(items, sortedRangeEnd);
+                Swap(items, sortedRangeEnd, nextIndex);
+
+                sortedRangeEnd++;
+            }
+
+            return items;
+        }
+
+        static private int FindIndexOfSmallestFromIndex(int[] items, int sortedRangeEnd)
+        {
+            int currentSmallest = items[sortedRangeEnd];
+            int currentSmallestIndex = sortedRangeEnd;
+
+            for (int i = sortedRangeEnd + 1; i < items.Length; i++)
+            {
+                if (currentSmallest.CompareTo(items[i]) > 0)
+                {
+                    currentSmallest = items[i];
+                    currentSmallestIndex = i;
+                }
+            }
+
+            return currentSmallestIndex;
+        }
 
     }
 }
