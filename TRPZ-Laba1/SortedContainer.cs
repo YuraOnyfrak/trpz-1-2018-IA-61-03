@@ -61,6 +61,24 @@ namespace TRPZ_Laba1
             return mas;
         }
 
+        //Maks-BubleSort
+        public static int[] BubleSort(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 0; j < array.Length - 1; j++)
+                {
+                    if (array[j + 1] < array[j])
+                    {
+                        int tmp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = tmp;
+                    }
+                }
+            }
+            return array;
+        }
+
 
     }
 }
